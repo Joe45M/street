@@ -19,7 +19,12 @@ class DatabaseSeeder extends Seeder
     public function run(): void
     {
 
-        $start = Carbon::now()->subDays(90);
+        User::factory(1)->create();
+
+        Home::factory(1)->create();
+
+
+        $start = Carbon::now()->subDays(15);
         $end = Carbon::now();
 
         $range = collect(new DatePeriod($start, new DateInterval('P1D'), $end));
